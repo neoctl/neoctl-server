@@ -1,102 +1,129 @@
-========================================================
-                          neoCTL
-========================================================
+# neoCTL
 
-A modern orchestration and management platform for virtual infrastructure.
-Automate provisioning, configuration, and monitoring of VMs across multiple
-hypervisors (Proxmox, KVM, VyOS) with DNS and storage integration.
+<p align="center">
+  <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go" alt="Go Version">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" alt="Version">
+</p>
 
-Website: https://neoctl.shivamsancc.com
-Author: Shivam Sancc
-Year: 2025
-License: MIT
+<p align="center">
+  <strong>A modern orchestration and management platform for virtual infrastructure</strong>
+</p>
 
---------------------------------------------------------
-Features
---------------------------------------------------------
-✔ Multi-Hypervisor Support: Manage VMs across Proxmox, KVM, VyOS nodes.
-✔ Automated Orchestration: Simplify VM lifecycle operations.
-✔ DNS Management: Cloudflare & PowerDNS integration.
-✔ Storage Management: MinIO & NFS support.
-✔ Monitoring & Logging: Centralized logging & infrastructure monitoring.
-✔ API & CLI Ready: Fully scriptable for automation workflows.
+<p align="center">
+  Automate provisioning, configuration, and monitoring of VMs across multiple hypervisors (Proxmox, KVM, VyOS) with integrated DNS and storage support.
+</p>
 
---------------------------------------------------------
-Architecture
---------------------------------------------------------
+<p align="center">
+  <a href="https://neoctl.shivamsancc.com">🌐 Website</a> •
+  <a href="#installation">📦 Installation</a> •
+  <a href="#documentation">📚 Documentation</a> •
+  <a href="#contributing">🤝 Contributing</a>
+</p>
+
+---
+
+## ✨ Features
+
+* 🔧 **Multi-Hypervisor Support** - Manage VMs across Proxmox, KVM, and VyOS nodes
+* ⚡ **Automated Orchestration** - Simplify VM lifecycle operations
+* 🌐 **DNS Management** - Cloudflare & PowerDNS integration
+* 💾 **Storage Management** - MinIO & NFS support
+* 📊 **Monitoring & Logging** - Centralized logging & infrastructure monitoring
+* 🚀 **API & CLI Ready** - Fully scriptable for automation workflows
+
+## 🏗️ Architecture
+
 User Request → neoCTL API → Orchestrator → Hypervisor Providers (Proxmox, KVM, VyOS)
-                                      ↓
-                             Storage / DNS / Networking
+↓
+Storage / DNS / Networking
 
-Layers:
-- Controller: Handles API requests & routes to services.
-- Service: Core logic for VM, storage, networking, DNS.
-- Providers: Hypervisor & service integrations.
-- Core Utilities: Logging, validation, error handling.
+### System Layers
 
---------------------------------------------------------
-Installation
---------------------------------------------------------
-Prerequisites:
-- Go >= 1.21
-- Git
-- Access to Proxmox, KVM, VyOS servers
-- Optional: Docker (for local development)
+| Layer              | Description                                 |
+| ------------------ | ------------------------------------------- |
+| **Controller**     | Handles API requests & routes to services   |
+| **Service**        | Core logic for VM, storage, networking, DNS |
+| **Providers**      | Hypervisor & service integrations           |
+| **Core Utilities** | Logging, validation, error handling         |
 
-Steps:
+## 📋 Requirements
 
-1. Clone the repository:
-   git clone https://github.com/neoctl/neoctl-server.git
-   cd neoctl-server
+* Go >= 1.21
+* Git
+* Access to Proxmox, KVM, VyOS servers
+* Docker (optional, for local development)
 
-2. Initialize Go modules:
-   go mod tidy
+## 🚀 Installation
 
-3. Build the server:
-   go build -o neoctl cmd/server/main.go
+```bash
+# Clone the repository
+git clone https://github.com/neoctl/neoctl-server.git
+cd neoctl-server
 
-4. Run the server:
-   ./neoctl
+# Initialize Go modules
+go mod tidy
 
---------------------------------------------------------
-Directory Structure
---------------------------------------------------------
+# Build the server
+go build -o neoctl cmd/server/main.go
+
+# Run the server
+./neoctl
+```
+
+## 📁 Directory Structure
+
+```
 neoctl-server/
-|
-├─ cmd/server/           # Entry point
-├─ internal/
-│  ├─ config/            # Configuration
-│  ├─ database/          # DB & migrations
-│  ├─ models/            # Data models
-│  ├─ providers/         # Hypervisor/service implementations
-│  ├─ services/          # Core business logic
-│  ├─ controllers/       # API controllers
-│  ├─ router/            # API routing
-│  └─ core/              # Utilities: errors, logger, validator
-├─ pkg/                  # Public packages
-├─ scripts/              # Deployment & migration scripts
-├─ configs/              # YAML config files
-├─ docs/                 # Documentation
-└─ docker/               # Dockerfiles & docker-compose
+├── cmd/server/           # Entry point
+├── internal/
+│   ├── config/           # Configuration
+│   ├── database/         # DB & migrations
+│   ├── models/           # Data models
+│   ├── providers/        # Hypervisor/service implementations
+│   ├── services/         # Core business logic
+│   ├── controllers/      # API controllers
+│   ├── router/           # API routing
+│   └── core/             # Utilities: errors, logger, validator
+├── pkg/                  # Public packages
+├── scripts/              # Deployment & migration scripts
+├── configs/              # YAML config files
+├── docs/                 # Documentation
+└── docker/               # Dockerfiles & docker-compose
+```
 
---------------------------------------------------------
-Contributing
---------------------------------------------------------
-Contributions are welcome! Please fork and submit pull requests.
+## 📚 Documentation
 
-1. Fork the repo
-2. Create a branch (git checkout -b feature/YourFeature)
-3. Commit changes (git commit -m 'Add new feature')
-4. Push branch (git push origin feature/YourFeature)
-5. Open a Pull Request
+For detailed documentation, visit: [https://neoctl.shivamsancc.com](https://neoctl.shivamsancc.com)
 
---------------------------------------------------------
-License
---------------------------------------------------------
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/YourFeature`)
+3. **Commit** your changes (`git commit -m 'Add new feature'`)
+4. **Push** to the branch (`git push origin feature/YourFeature`)
+5. **Open** a Pull Request
+
+## 📄 License
+
 MIT License © 2025 Shivam Sancc
 
---------------------------------------------------------
-Contact
---------------------------------------------------------
-GitHub Issues: https://github.com/neoctl/neoctl-server/issues
-Website: https://neoctl.shivamsancc.com
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+* 🐛 **Issues**: [GitHub Issues](https://github.com/neoctl/neoctl-server/issues)
+* 🌐 **Website**: [https://neoctl.shivamsancc.com](https://neoctl.shivamsancc.com)
+* 👨‍💻 **Author**: Shivam Sancc
+
+---
+
+<p align="center">
+  <strong>Built for modern infrastructure teams who demand simplicity without sacrificing power.</strong>
+</p>
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/shivamsancc">Shivam Sancc</a>
+</p>

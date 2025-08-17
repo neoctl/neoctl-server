@@ -66,11 +66,11 @@ Contributors can join the [Discord Server](https://discord.gg/neoctl) for quick 
 
 We are incredibly grateful to our sponsors for their generous support, which makes the development of neoCTL possible.
 
-<a href="https://github.com/sponsors/shivamsancc">
+<a href="https://www.coderabbit.ai/?utm_source=github&utm_medium=social&utm_campaign=sponsor&utm_term=dicedb">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/sponsors/shivamsancc/badge.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/sponsors/shivamsancc/badge.svg">
-    <img alt="Sponsor neoCTL" src="https://github.com/sponsors/shivamsancc/badge.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://www.coderabbit.ai/images/logo-white.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://www.coderabbit.ai/images/logo-orange.svg">
+    <img alt="CodeRabbit" src="https://www.coderabbit.ai/images/logo-orange.svg">
   </picture>
 </a>
 

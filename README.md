@@ -1,128 +1,96 @@
 # neoCTL
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go" alt="Go Version">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" alt="Version">
-</p>
+> \[!CAUTION]
+> neoCTL is currently in active development. Some features may be unstable or subject to change.
+> Please test thoroughly in non-production environments before deploying to production.
 
-<p align="center">
-  <strong>A modern orchestration and management platform for virtual infrastructure</strong>
-</p>
+<a href="https://neoctl.shivamsancc.com">![neoctl.shivamsancc.com](https://img.shields.io/badge/site-neoctl.shivamsancc.com-00A1FF?style=flat-square)</a> <a href="https://neoctl.shivamsancc.com/docs/">![Docs](https://img.shields.io/badge/docs-00A1FF?style=flat-square)</a> <a target="_blank" href="https://discord.gg/neoctl"><img src="https://dcbadge.limes.pink/api/server/neoctl?style=flat" alt="discord community" /></a>
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![GitHub Sponsor](https://img.shields.io/github/sponsors/shivamsancc?label=Sponsors\&logo=GitHub)
 
-<p align="center">
-  Automate provisioning, configuration, and monitoring of VMs across multiple hypervisors (Proxmox, KVM, VyOS) with integrated DNS and storage support.
-</p>
+### What is neoCTL?
 
-<p align="center">
-  <a href="https://neoctl.shivamsancc.com">🌐 Website</a> •
-  <a href="#installation">📦 Installation</a> •
-  <a href="#documentation">📚 Documentation</a> •
-  <a href="#contributing">🤝 Contributing</a>
-</p>
+neoCTL is an open-source, modern orchestration and management platform for virtual infrastructure. Built for scalability and efficiency, it automates provisioning, configuration, and monitoring of VMs across multiple hypervisors (Proxmox, KVM, VyOS) with integrated DNS and storage support. It delivers simplified infrastructure management while maintaining enterprise-grade reliability.
 
----
+<!-- ## Get started
 
-## ✨ Features
+### Setting up neoCTL with Docker
 
-* 🔧 **Multi-Hypervisor Support** - Manage VMs across Proxmox, KVM, and VyOS nodes
-* ⚡ **Automated Orchestration** - Simplify VM lifecycle operations
-* 🌐 **DNS Management** - Cloudflare & PowerDNS integration
-* 💾 **Storage Management** - MinIO & NFS support
-* 📊 **Monitoring & Logging** - Centralized logging & infrastructure monitoring
-* 🚀 **API & CLI Ready** - Fully scriptable for automation workflows
-
-## 🏗️ Architecture
-
-User Request → neoCTL API → Orchestrator → Hypervisor Providers (Proxmox, KVM, VyOS)
-↓
-Storage / DNS / Networking
-
-### System Layers
-
-| Layer              | Description                                 |
-| ------------------ | ------------------------------------------- |
-| **Controller**     | Handles API requests & routes to services   |
-| **Service**        | Core logic for VM, storage, networking, DNS |
-| **Providers**      | Hypervisor & service integrations           |
-| **Core Utilities** | Logging, validation, error handling         |
-
-## 📋 Requirements
-
-* Go >= 1.21
-* Git
-* Access to Proxmox, KVM, VyOS servers
-* Docker (optional, for local development)
-
-## 🚀 Installation
+The easiest way to get started with neoCTL is using [Docker](https://www.docker.com/) by running the following command.
 
 ```bash
-# Clone the repository
-git clone https://github.com/neoctl/neoctl-server.git
-cd neoctl-server
-
-# Initialize Go modules
-go mod tidy
-
-# Build the server
-go build -o neoctl cmd/server/main.go
-
-# Run the server
-./neoctl
+$ docker run -p 8080:8080 neoctl/neoctl-server:latest
 ```
 
-## 📁 Directory Structure
+The above command will start the neoCTL server running locally on port `8080` and you can connect to it using the neoCTL CLI and SDKs.
 
-```
-neoctl-server/
-├── cmd/server/           # Entry point
-├── internal/
-│   ├── config/           # Configuration
-│   ├── database/         # DB & migrations
-│   ├── models/           # Data models
-│   ├── providers/        # Hypervisor/service implementations
-│   ├── services/         # Core business logic
-│   ├── controllers/      # API controllers
-│   ├── router/           # API routing
-│   └── core/             # Utilities: errors, logger, validator
-├── pkg/                  # Public packages
-├── scripts/              # Deployment & migration scripts
-├── configs/              # YAML config files
-├── docs/                 # Documentation
-└── docker/               # Dockerfiles & docker-compose
+> \[!NOTE]
+> If you are looking to setup neoCTL for development or want to setup from source, refer to our [CONTRIBUTING.md](CONTRIBUTING.md) guide. -->
+
+### Setting up from Source
+
+```bash
+$ git clone https://github.com/neoctl/neoctl-server.git
+$ cd neoctl-server
+
+$ go mod tidy
+
+$ go build -o neoctl cmd/server/main.go
+
+$ ./neoctl
 ```
 
-## 📚 Documentation
+## Setting up CLI
 
-For detailed documentation, visit: [https://neoctl.shivamsancc.com](https://neoctl.shivamsancc.com)
+### Using cURL
 
-## 🤝 Contributing
+The best way to connect to neoCTL is using the neoCTL CLI and you can install it by running the following command:
 
-Contributions are welcome! Please follow these steps:
+```bash
+$ sudo su
+$ curl -sL https://raw.githubusercontent.com/neoctl/neoctl-cli/main/install.sh | sh
+```
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/YourFeature`)
-3. **Commit** your changes (`git commit -m 'Add new feature'`)
-4. **Push** to the branch (`git push origin feature/YourFeature`)
-5. **Open** a Pull Request
+If you are working on an unsupported OS (as per above script), you can always follow the installation instructions mentioned in the [neoctl/cli](https://github.com/neoctl/neoctl-cli) repository.
 
-## 📄 License
+> \[!NOTE]
+> If you are looking to setup neoCTL for development or want to setup from source, refer to our [CONTRIBUTING.md](CONTRIBUTING.md) guide.
 
-MIT License © 2025 Shivam Sancc
+## Want to contribute?
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The Code Contribution Guidelines are published at [CONTRIBUTING.md](CONTRIBUTING.md); please read them before you start making any changes. This would allow us to have a consistent standard of coding practices and developer experience.
 
-## 📞 Support
+Contributors can join the [Discord Server](https://discord.gg/neoctl) for quick collaboration.
 
-* 🐛 **Issues**: [GitHub Issues](https://github.com/neoctl/neoctl-server/issues)
-* 🌐 **Website**: [https://neoctl.shivamsancc.com](https://neoctl.shivamsancc.com)
-* 👨‍💻 **Author**: Shivam Sancc
+## Sponsors
+
+We are incredibly grateful to our sponsors for their generous support, which makes the development of neoCTL possible.
+
+<a href="https://github.com/sponsors/shivamsancc">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/sponsors/shivamsancc/badge.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/sponsors/shivamsancc/badge.svg">
+    <img alt="Sponsor neoCTL" src="https://github.com/sponsors/shivamsancc/badge.svg">
+  </picture>
+</a>
+
+## Support and Sponsor Us
+
+neoCTL is a project with a strong vision and [roadmap](https://neoctl.shivamsancc.com/roadmap/). If you like what we do and find neoCTL useful, please consider supporting and [sponsoring us on GitHub](https://github.com/sponsors/shivamsancc).
+
+![GitHub Sponsor](https://img.shields.io/github/sponsors/shivamsancc?label=Sponsors\&logo=GitHub)
+
+## Contributors
+
+<a href="https://github.com/neoctl/neoctl-server/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=neoctl/neoctl-server"/>
+</a>
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-<p align="center">
-  <strong>Built for modern infrastructure teams who demand simplicity without sacrificing power.</strong>
-</p>
 
 <p align="center">
   Made with ❤️ by <a href="https://github.com/shivamsancc">Shivam Sancc</a>
